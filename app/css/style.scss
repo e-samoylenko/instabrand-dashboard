@@ -1,7 +1,150 @@
 @import "../bootstrap/css/bootstrap.css";
+@import url(http://fonts.googleapis.com/css?family=Archivo+Narrow:400,400italic,700);
 
 /* Variables */;
 
 //colors
-$white: 	#fff;
-$maintext: 	#333;
+$default-text-color: #333;
+$border-color: #ccc;
+$selection-bg: #e3eef7;
+$red: #dd0806;
+
+//sizes
+$default-text-size: 18px;
+
+* {
+	font-family: 'Archivo Narrow', sans-serif;
+	font-size: $default-text-size;
+}
+
+body {
+	max-width: 1200px;
+}
+
+#navbar-wrapper {
+	background: none;
+	border: none;
+
+	#navbar {
+		border-bottom: solid 1px $border-color;
+		padding: 15px 0;
+	}
+}
+
+#user-menu-dropdown {
+	border-radius: 5px;
+	padding: 5px;
+		
+	.navbar-user-photo {
+	border-radius: 20px;
+	display: inline-block;
+	height: 40px;
+	overflow: hidden;
+	position: relative;
+	top: 2px;
+	width: 40px;
+
+		img {
+			height: 100%;
+		}
+	}
+
+	.navbar-user {
+		display: inline-block;
+		margin: 0 10px 0 5px;
+
+		.navbar-user-name {
+			font-weight: bold;
+		}
+
+		.navbar-user-mail {
+			font-size: 0.85*$default-text-size;
+		}
+	}
+
+	.caret {
+		position: relative;
+		top: -13px;
+	}
+
+}
+
+#side-menu {
+	li {
+		a {
+			color: $default-text-color;
+			font-size: 1.2*$default-text-size;
+		}
+
+		img {
+			margin-right: 10px;
+			opacity: 0.5;
+			position: relative;
+			top: -2px;
+			width: 25px;	
+		}
+	}
+
+	li.active {
+		a {
+			background-color: $selection-bg;
+		}
+
+		img {
+			opacity: 0.75;
+		}
+	}
+}
+
+#insta-banner {
+	background: url('../img/instabanner.png');
+	height: 150px;
+	overflow: hidden;
+
+	.start-here {
+		background: $red;
+		color: #fff;
+		font-size: $default-text-size;
+		font-weight: bold;
+		left: -55px;
+	    padding: 0 50px;
+	    position: absolute;
+	    top: 22px;
+		transform: rotate(-45deg);
+	}
+
+	.banner-message {
+		background-color: rgba(0, 0, 0, 0.6);
+		background-image: url('../img/instagram.svg');
+		background-repeat: no-repeat;
+		background-position: 10px 10px;
+		background-size: 40px;
+		color: #fff;
+		left: 80px;
+	    max-width: 35%;
+	    min-width: 220px;
+	    padding: 5px 10px 5px 60px;
+	    position: absolute;
+	    top: 25px;
+
+	    a {
+	    	color: #fff;
+	    	display: block;
+	    	height: 100%;
+
+	    	:hover {
+	    		text-decoration: none;
+	    	}
+	    }
+
+	    h6 {
+	    	font-size: 1.2*$default-text-size;
+	    	font-weight: bold;
+	    	margin-bottom: 5px;
+	    }
+
+	    p {
+	    	font-size: 0.85*$default-text-size;
+	    }
+	}
+}

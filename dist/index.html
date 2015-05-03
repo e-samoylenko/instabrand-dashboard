@@ -22,35 +22,55 @@
   <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-30526439-1', 'oneskyapp.com');ga('send', 'pageview');</script><meta class="os-tdn" http-equiv="Content-Language" content="ru"><meta class="os-tdn" property="og:locale" content="ru">
   </head>
 
-  <body>
+  <body class="container">
 
-    <nav class="navbar navbar-inverse" role="navigation">
+    <nav id="navbar-wrapper" class="navbar navbar-inverse" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
-            <img src="img/logo.png">
+            <img alt="Instabrand Logo" src="img/logo.png">
           </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-         
+          <div class="dropdown pull-right">
+              <button class="btn btn-default dropdown-toggle" type="button" id="user-menu-dropdown" data-toggle="dropdown" aria-expanded="true">
+                <span class="navbar-user-photo"><img alt="Nick Lucas" src="img/nick.jpg"></span>
+                <div class="navbar-user text-left">
+                  <div class="navbar-user-name">Nick Lucas</div>
+                  <div class="navbar-user-mail">nick@instabrand.com</div>
+                </div>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+              </ul>
+            </div>
         </div>
       </div>
     </nav>
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
+        <div class="col-md-3 sidebar">
+          <ul id="side-menu" class="nav nav-sidebar">
+            <li class="active"><a href="#"><span><img src="img/dashboard.svg"></span>Dashboard</a></li>
+            <li><a href="#"><span><img src="img/analytics.svg"></span>Analytics</a></li>
           </ul>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
 
-          <div class="row placeholders">
-            
-          </div>
+        <div class="col-md-9 main">
+            <div id="insta-banner" class="col-md-12">
+              <div class="start-here">Start Here!</div>
+              <div class="banner-message">
+                <a href="#">
+                  <h6>Connect to Instagram</h6>
+                  <p>Set up your account by logging in to Instargam.</p>
+                </a>
+              </div>
+            </div>
 
         </div>
       </div>
@@ -64,7 +84,6 @@
     <script src="//getbootstrap.com/examples/dashboard/../../assets/js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="//getbootstrap.com/examples/dashboard/../../assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script type="text/javascript">OneSkyClientConfig = {apiKey: "U9aDnPz49ouz8J2CjMcAz74GppvQBGym",project: 19540,translate: true,locale: "ru",xdReceiver: "http://www.oneskyapp.com/docs/xd_receiver.html"};</script>
-    <script class="os-tdn" type="text/javascript" src="//s3.amazonaws.com/oneskyapp.static/in-context/loader.min.js"></script>
+
   </body>
 </html>
