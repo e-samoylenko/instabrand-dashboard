@@ -1,0 +1,1 @@
+jQuery(document).ready(function(t){t("#charts").highcharts({data:{table:"earnings-data"},chart:{type:"column"},title:{text:"Chart of earnings"},yAxis:{allowDecimals:!1,title:{text:"USD"}}})});
