@@ -4,7 +4,7 @@ var livereload = require('gulp-livereload');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
-var uncss = require('gulp-uncss');
+var imagemin = require('gulp-imagemin');
 
 gulp.task('connect', function() {
   connect.server({
@@ -27,10 +27,17 @@ gulp.task('html', function () {
     .pipe(gulp.dest('./dist/'))
     .pipe(connect.reload());
 });
+
+gulp.task('img', function () {
+  gulp.src('./app/img/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./dist/img/'))
+    .pipe(connect.reload());
+});
  
 gulp.task('watch', function () {
   gulp.watch(['./app/*.html'], ['html']);
-  gulp.watch(['./app/scss/*.scss'], ['css']);
+  gulp.watch(['./app/css/*.scss'], ['css']);
 });
  
-gulp.task('default', ['connect', 'html', 'css', 'watch']);
+gulp.task('default', ['connect', 'html', 'css', 'img', 'watch']);
