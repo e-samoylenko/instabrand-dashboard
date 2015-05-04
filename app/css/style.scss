@@ -1,4 +1,4 @@
-@import "../bootstrap/css/bootstrap.css";
+@import "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css";
 @import url(http://fonts.googleapis.com/css?family=Archivo+Narrow:400,400italic,700);
 
 /* Variables */;
@@ -108,13 +108,48 @@ h3 {
 	}
 }
 
-#insta-banner {
-	background: url('../img/instabanner.png');
+// Banners
+
+#main-content .banner {
 	background-position: 100% 100%;
 	height: 150px;
 	margin-bottom: 30px;
 	overflow: hidden;
 	position: relative;
+
+	.banner-message {
+		color: #fff;
+	    position: absolute;
+
+	    a {
+	    	background-color: rgba(0, 0, 0, 0.6);
+	    	color: #fff;
+	    	display: block;
+	    	height: 100%;
+	    	text-decoration: none !important;
+	    	transition: background-color, 0.5s, ease-out, 0s;
+	    }
+
+	    a:hover {
+	    	background-color: rgba(33, 33, 33, 0.9);
+	    }
+
+	    h6 {
+	    	font-size: 1.2*$default-text-size;
+	    	font-weight: bold;
+	    	margin-bottom: 5px;
+	    }
+
+	    p {
+	    	font-size: 0.85*$default-text-size;
+	    }
+	}
+}
+
+// Instagram Banner
+
+#insta-banner {
+	background-image: url('../img/instabanner.png');
 
 	.start-here {
 		background: $red;
@@ -127,42 +162,58 @@ h3 {
 	    top: 22px;
 		transform: rotate(-45deg);
 	}
-
+	
 	.banner-message {
-		color: #fff;
 		height: 80px;
 	    min-width: 250px;
-	    position: absolute;
 	    right: 30px;
 	    top: 35px;
 
 	    a {
-	    	background-color: rgba(0, 0, 0, 0.6);
 			background-image: url('../img/instagram.svg');
 			background-repeat: no-repeat;
 			background-position: 15px 15px;
 			background-size: 35px;
-	    	color: #fff;
-	    	display: block;
-	    	height: 100%;
 	    	padding: 5px 10px 5px 60px;
-	    	transition: background-color, 0.5s, ease-out, 0s;
+	    	
 	    }
+	}
+	
+}
 
-	    a:hover {
-	    	background-color: rgba(33, 33, 33, 0.9);
-	   		text-decoration: none !important;
-	    }
+// Campaign Banner
+#campaign {
+	background-image: url('../img/v-neck.png');
+	display: none;
+	padding: 0;
 
-	    h6 {
-	    	font-size: 1.2*$default-text-size;
-	    	font-weight: bold;
-	    	margin-bottom: 5px;
-	    }
+	.banner-message {
+		height: 100%;
+		margin: 0;
 
-	    p {
-	    	font-size: 0.85*$default-text-size;
-	    }
+		a {
+			padding: 20px;
+
+			span {
+				color: #ddd;
+				font-size: 0.7*$default-text-size;
+				letter-spacing: 2px;
+			}
+
+			h6 {
+				margin-bottom: 15px !important;
+			}
+
+			p {
+				color: #ddd;
+			}
+
+			button {
+				background-color: #000;
+				color: #fff;
+				margin-right: 10px;
+			}
+		}
 	}
 }
 
@@ -218,8 +269,43 @@ $circle-size: 90px;
 }
 
 #charts {
+	position: relative;
 	tspan {
 		font-size: 1.2*$default-text-size;
 		font-weight: bold;
 	}
+}
+
+#modal-connect {
+	display: block;
+	position: absolute;
+	top: -40px;
+
+	.modal-header {
+		border: none;
+		padding: 10px 0;
+	}
+
+	h2 {
+		font-weight: bold;
+	}
+
+	.modal-body .btn span {
+		background: url('../img/instagram-dark.svg') no-repeat;
+		background-size: 24px;
+		display: block;
+		padding-left: 35px;
+	}
+}
+
+#instagram-auth {
+	.instagram-text-logo {
+		width: 90%;
+	}
+}
+
+// Tables 
+
+#likers-table {
+	display: none;
 }

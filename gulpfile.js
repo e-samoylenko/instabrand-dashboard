@@ -31,6 +31,9 @@ gulp.task('css', function () {
 });
  
 gulp.task('html', function () {
+  gulp.src('./app/data/*')
+    .pipe(gulp.dest('./dist/data/'));
+    
   gulp.src('./app/*.html')
     .pipe(gulp.dest('./dist/'))
     .pipe(connect.reload());
