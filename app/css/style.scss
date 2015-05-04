@@ -28,12 +28,19 @@ h3 {
 }
 
 #navbar-wrapper {
-	background: none;
+	background: #fff;
 	border: none;
+	border-bottom: solid 1px $border-color;
+	height: 80px;
+
+	.navbar-header {
+		border: none;
+		width: 170px;
+	}
 
 	#navbar {
-		border-bottom: solid 1px $border-color;
-		padding: 15px 0;
+		border: none;
+		padding: 11px 0 0 0;
 	}
 }
 
@@ -71,6 +78,7 @@ h3 {
 	}
 
 	.caret {
+		margin-left: 5px;
 		position: relative;
 		top: -13px;
 	}
@@ -111,15 +119,22 @@ h3 {
 // Banners
 
 #main-content .banner {
-	background-position: 100% 100%;
 	height: 150px;
 	margin-bottom: 30px;
 	overflow: hidden;
+	padding: 0;
 	position: relative;
+
+	.banner-inner {
+		display: table;
+		height: 100%;
+		width: 100%;
+	}
 
 	.banner-message {
 		color: #fff;
-	    position: absolute;
+		display: table-cell;
+		vertical-align: middle;
 
 	    a {
 	    	background-color: rgba(0, 0, 0, 0.6);
@@ -150,6 +165,7 @@ h3 {
 
 #insta-banner {
 	background-image: url('../img/instabanner.png');
+	background-position: 0 0;
 
 	.start-here {
 		background: $red;
@@ -164,10 +180,9 @@ h3 {
 	}
 	
 	.banner-message {
-		height: 80px;
-	    min-width: 250px;
-	    right: 30px;
-	    top: 35px;
+		position: relative;
+		right: 35px;
+		width: 335px;
 
 	    a {
 			background-image: url('../img/instagram.svg');
@@ -181,9 +196,24 @@ h3 {
 	
 }
 
+.page-xs #insta-banner {
+	padding: 10px;
+
+	.banner-message {
+		right: 0;
+		width: 100%;
+
+		a {
+			background-image: none;
+			padding: 5px 10px;
+		}
+	}
+}
+
 // Campaign Banner
 #campaign {
 	background-image: url('../img/v-neck.png');
+	background-position: center 0;
 	display: none;
 	padding: 0;
 
@@ -193,6 +223,7 @@ h3 {
 
 		a {
 			padding: 20px;
+			width: 420px;
 
 			span {
 				color: #ddd;
@@ -217,6 +248,24 @@ h3 {
 	}
 }
 
+.page-xs #campaign {
+	padding: 10px;
+
+	.banner-message {
+		height: auto;
+		
+		a {
+			padding: 10px;
+			width: 100%;
+
+			h6 {
+				margin: 0;
+			}
+		}
+	}
+
+}
+
 // Earnings
 $circle-size: 90px;
 
@@ -230,6 +279,10 @@ $circle-size: 90px;
 
 .earnings-item {
 	margin-bottom: 20px;
+}
+
+.page-xs .earnings-item {
+	text-align: center;
 }
 
 .earnings-ammount {
@@ -252,6 +305,14 @@ $circle-size: 90px;
 		display: table-cell;
 		font-size: 0.85*$default-text-size;
 		vertical-align: middle;
+	}
+}
+
+.page-md,
+.page-sm,
+.page-xs {
+	.earnings-label span {
+		font-size: $default-text-size;
 	}
 }
 
